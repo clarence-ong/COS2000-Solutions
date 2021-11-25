@@ -18,7 +18,7 @@ include_dir: ["analysis", "setup", "license", "notes", "protected"]
 
 # Do not add links in the navigation bar for the Jupyter notebooks in
 # these subdirectories.
-hide_navbar: ["analysis"]
+hide_navbar: []
 
 # Any Jupyter notebooks listed here will not be rendered into webpages
 # (e.g., "analysis/temp.ipynb").

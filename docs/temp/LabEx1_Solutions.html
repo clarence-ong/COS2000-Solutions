@@ -1,7 +1,3 @@
-{%- extends 'basic.tpl' -%}
-
-{%- block header -%}
-{{ super() }}
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -124,7 +120,7 @@ function sortDataFrame(id, n, dtype) {
 
 <script>
 $( document ).ready(function(){
-            var cfg={'threshold':{{ nb.get('metadata', {}).get('toc', {}).get('threshold', '3') }},     // depth of toc (number of levels)
+            var cfg={'threshold':3,     // depth of toc (number of levels)
              'number_sections': false,
              'toc_cell': false,          // useless here
              'toc_window_display': true, // display the toc window
@@ -144,12 +140,12 @@ $( document ).ready(function(){
             st.toc_index=0;
             // fire the main function with these parameters
             table_of_contents(cfg, st);
-            var file=setupDict[$("h1:first").attr("id")];
+            var file=tempDict[$("h1:first").attr("id")];
             $("#toc-level0 a").css("color","#126dce");
             $('a[href="#'+$("h1:first").attr("id")+'"]').hide()
-            var docs=setupArray;
-            var docs_map=setupArrayMap;
-            var pos=setupArray.indexOf(file);
+            var docs=tempArray;
+            var docs_map=tempArrayMap;
+            var pos=tempArray.indexOf(file);
             for (var a=pos;a>=0;a--){
                   $('<li><a href="'+docs[a]+'.html"><font color="#073642"><b>'+docs_map[docs[a]].replace(/_/g," ")+'</b></font></a></li>').insertBefore("#toc-level0 li:eq(0)");
             }
@@ -252,14 +248,55 @@ body {
       </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Lab-Exercise-1-Solutions-(Total-Marks:-12)"><span style="color:blue">Lab Exercise 1 Solutions (Total Marks: 12)</span><a class="anchor-link" href="#Lab-Exercise-1-Solutions-(Total-Marks:-12)">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Google for a favourite quote of yours.Type the quote into a Markdown cell and demonstrate the use of the formatting  functions (heading, various font styles, indentation) and media display (insert a hyperlink and an image).(Hint: To attach and resize image, you could type <strong>img src="attachment:imageName" width="pixelsNum"</strong> within a pair of angle brackets.)</li>
+</ol>
 
-{%- endblock header -%}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Render the following expressions using LaTeX:
+<img src="attachment:LabEx1Qn2.png" width="350"></li>
+</ol>
+<p>(Hint: To show long right-pointing arrow, you could type <strong>\longrightarrow</strong>)</p>
 
-{% block footer %}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-1-(5-marks)"><span style="color:blue">Question 1 (5 marks)</span><a class="anchor-link" href="#Question-1-(5-marks)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-2-(7-marks)"><span style="color:blue">Question 2 (7 marks)</span><a class="anchor-link" href="#Question-2-(7-marks)">&#182;</a></h3>$$ \sin^2\theta + \cos^2\theta = 1 $$<p></p>
+$$ x_{n+1} = rx_n(1-x_n) $$$$ 6CO_2 + 6H_2O \longrightarrow C_6H_{12}O_{6} + 6O_{2} $$$$ P(x,\sigma,\mu) = \frac{1}{\sigma \sqrt{2\pi}}e^{-(x-\mu)^2/2\sigma^2} $$$$ y \approx \sqrt{1+\frac{1}{\sqrt[3]{1+\frac{1}{x}}}} $$$$ \sum\limits_{i=0}^{\infty}\frac{(k+i)!}{k!i!}x^i = \frac{1}{(1-x)^k} $$$$ \int_0^1\left[\int_0^3F(x,y,h)f(x)dx\right]^kf(y)dy = 3 $$<p></p>
+
+</div>
+</div>
+</div>
 <hr>
 &copy; 2017 Peter Carbonetto &amp; Gao Wang
+<p><small>Exported from <a href="http://github.com/stephenslab/ipynb-website/blob/93d5f12191c2c3a1fa3ed720ee8ee466f0ead53b/temp/LabEx1_Solutions.ipynb"><code>temp/LabEx1_Solutions.ipynb</code></a> committed by clarence-ong on Thu Nov 25 03:40:55 2021 <a href="http://github.com/stephenslab/ipynb-website/commit/93d5f12191c2c3a1fa3ed720ee8ee466f0ead53b">revision 1, 93d5f12</a> <a href="https://stephenslab.github.io/ipynb-website/notes.html#Note-about-commit-ids"><span class="fa fa-question-circle"></span></a></small></p>
 </div>
 </div>
 </body>
 </html>
-{% endblock %}

@@ -201,6 +201,10 @@ $(document).ready(function () {
   <a href="./protected.html">Protected</a>
 </li>
         
+<li>
+  <a href="./temp.html">Temp</a>
+</li>
+        
       </ul>
     
 <ul class="nav navbar-nav navbar-right">
